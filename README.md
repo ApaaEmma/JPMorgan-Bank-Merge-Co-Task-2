@@ -1,45 +1,72 @@
-# JPMorgan-Chase-Software-Engineering-Virtual-Experience
-# Introduction
-Experience Technology at JP Morgan Chase & Co
-Try out what real work is like in the technology team at JP Morgan Chase & Co. Fast track to the tech team with your work.
+<p align="center">
+<a href="https://www.insidesherpa.com/virtual-internships/prototype/R5iK7HMxJGBgaSbvk/Technology%20Virtual%20Experience" target="_blank">
+<img src="https://insidesherpa-assets.s3-ap-southeast-2.amazonaws.com/icons/jpmorgan/github+repo+images/jpmc+github+img.png">
+	</a>
+</p>
 
-# Module 1 Task Overview
-Interface with a stock price data feed and set up your system for analysis of the data
+<p align="center"> 
+	<b><a href="#task">Task Overview</a></b>
+	|
+	<b><a href="#installation">Installation Instructions</a></b>
+	| 
+	<b><a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/88AisH7iuw3L5N5ig" target="_blank">Link to Module 2</a></b>
 
-# Aim: We want to process the data feed of stock A and stock B’s price to enable us to analyse when trading for the stock should occur.
+<h1> Introduction</h1> 
+<b> Experience Technology at JP Morgan Chase </b>
+<p>Try out what real work is like in the technology team JP Morgan Chase. Fast track to the tech team with your work.</p>
 
-* Please clone this repository to start the task
-* Adjust the getRatio, getDataPoint and main functions
-* Bonus: Pass all unit tests and add more to cover edge cases
-* Upload a git patch file as the submission to this task
-* Set up / Installation
-In order to get the server and client application code working on your machine, follow the setup here
+<h2 id="task"> Module 2 Task Overview </h2>
+<p>Use JP Morgan Chase's frameworks and tools
+Implement JP Morgan Chase’s Perspective open source code in preparation for data visualization</p>
+<p> <b>Aim:</b>Take an incomplete setup of Perspective, i.e. a graph that updates manually, and make it work with the code from Task 1 such that it now updates automatically by continuously requesting from the server application</p>
 
-Note:This is the Python 3 version of the JPM 1 exercise. The Python 2.7 version is in this other repo
+<ol>
+	<li>Please clone this repository to start the task</li>
+	<li>[goal-a] In the client application, observe that when new data feed is retrieved whenever you click the 'Start Streaming Data' button, the previous entry is re-entered into the table. Update the application so that the table does not have duplicated entries</li>
+	<li>[goal-b] We also want the react app to keep continuosly requesting data from the python server. Currently, the data feed is called only once every time the 'Start Streaming' button is clicked. Change the application to continuously query the datafeed every 100ms when the 'Start Streaming' is clicked.</li>
+	<li>[goal-c] Currently, the Perspective element only shows the data in table view after the data loads. Add Perspective configurations so that when the data is loaded, it shows the historical data of ask_price ABC in the Y line chart.</li>
+	<li>Upload a git patch file as the submission to this task</li>	
+</ol>
 
-# How to Run
- To start the server, run
-* python server3.py
-this will create random market called 'test.csv' in your working directory if one does not already exist.
+<h2 id="installation" >Set up / Installation</h2>
+<p>In order to get the server and client application code working on your machine, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/setup_devenv_m2_v8.pdf">follow the setup here</a></p>
 
-## If you encounter an issue with datautil.parser, run this command:
 
-* pip install python-dateutil
-* If you don't have pip yet, you can install it from: https://pip.pypa.io/en/stable/installing/
+<h2>How to Run</h2>
 
-## To start the example client, run:
+<p>Similar to Task 1, start the data feed server by running the python server.</p> 
+<p>Make sure your terminal / command line is in the repository first before doing any of this.</p>
+<p>If you are using Windows, make sure to run your terminal/command prompt as administrator.</p>
 
-* python client3.py
-* To unit test the example client, run: python client_test.py
+<code> python datafeed/server.py </code>
 
-## How to request from the server using curl
-Query:
-* $ curl 'http://localhost:8080/query?id=1'
-* {"id": "1", "top_ask": {"price": 129.18, "size": 70}, "timestamp": "2016-08-06 12:32:11.821574", "top_bid": {"price": 128.79, "size": 61}}
-# How to fix the code to meet objectives
-To make the changes necessary to complete the objectives of this task, follow this guide.
+If you encounter an issue with `datautil.parser`, run this command: 
 
-To do the bonus task, read this.
+	pip install python-dateutil
 
-## How to submit your work
-* A patch file is what is required from you to submit. To create a patch file, follow this guide. Then submit the patch file in the JPM Module 1 Page.
+If you don't have pip, you can install it from: https://pip.pypa.io/en/stable/installing/
+
+Run <code>npm install && npm start</code> to start the React application.
+
+It's okay to have audit warnings when installing/running the app.
+
+If you don't have `npm` (although you should if you followed the set up / installation part), you can install the recommended version alongside NodeJS from: https://nodejs.org/en/
+
+The recommended version are node v11.0.0 and npm v6.4.1
+
+Open http://localhost:3000 to view the app in the browser. The page will reload if you make edits.
+
+<h2>Known Issues</h2>
+Some users seem to be having trouble with the unzipped version of the node_modules back up for windows. 
+This is the alternative unzipped version:
+https://drive.google.com/drive/folders/1wzIlt-OeiK6nYEHidsOGlpJ_KmeoPVXz
+
+Note: You may need to (hard) refresh the link to the public gdrive to see all of the files/folders e.g. @jpmorganchase/perspective as it takes gdrive a bit to load them for you.
+
+<h2>How to fix the code to meet the objectives</h2>
+<p>Ideally you should have some background into programming and possibly some knowledge about web applications/frameworks to reach the objectives of this task.</p>
+<p> If you're up to the challenge, please attempt to do this task without using the guide below.</p>
+<p>If you have absolutely no clue where to start, you can <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/making_changes_m2_v2.pdf">follow this guide</a>.</p>
+
+<h2>How to submit your work</h2>
+<p>A patch file is what is required from you to submit. To create a patch file, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/create_patch_file_v3a.pdf">follow this guide</a>. Then submit the patch file in the <a href="https://www.insidesherpa.com/modules/R5iK7HMxJGBgaSbvk/88AisH7iuw3L5N5ig">JPM Module 2 Page</a>.</p>
